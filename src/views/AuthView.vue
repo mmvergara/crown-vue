@@ -27,6 +27,7 @@
           id="authPassword"
           class="bg-retroCream p-2 rounded-sm w-full mb-4"
         />
+
         <button
           v-if="isSignup"
           type="submit"
@@ -40,6 +41,13 @@
           class="bg-retroPurplePink p-4 rounded-sm text-white flex-auto w-full"
         >
           Sign in
+        </button>
+        <button
+          type="button"
+          @click="handleGoogleAuth"
+          class="border-2 border-green-900 text-green-900 font-bold p-2 mt-4 rounded-sm flex-auto w-full hover:bg-green-700 hover:text-white"
+        >
+          Sign in with Google
         </button>
       </div>
     </form>
@@ -75,5 +83,9 @@ const authSubmit = (e: Event) => {
   } else {
     console.log("signin");
   }
+};
+
+const handleGoogleAuth = () => {
+  console.log("google auth");
 };
 </script>
