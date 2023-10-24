@@ -23,6 +23,21 @@
           class="bg-retroCream p-4 rounded-sm w-full mb-6"
         ></textarea>
         <button
+          type="button"
+          class="border-2 border-green-900 text-green-900 font-bold p-2 mt-4 rounded-sm flex-auto w-full hover:bg-green-700 hover:text-white"
+          @click="handleImageUpload"
+        >
+          Upload Image
+        </button>
+        <input
+          type="file"
+          accept="image/*"
+          hidden
+          ref="imageInputRef"
+          id="imageInput"
+        />
+
+        <button
           type="submit"
           class="bg-retroPurplePink p-4 text-white flex-auto w-full rounded-md"
         >
@@ -35,27 +50,29 @@
 </template>
 
 <script setup lang="ts">
-import { AxiosRequest } from "@/components/AxiosInstance";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 const postTitle = ref("");
 const postDescription = ref("");
 const err = ref("");
 
+// get the image file from the input
+const imageInputRef = ref<HTMLInputElement | null>(null);
+onMounted(() => {
+  imageInputRef.value = document.querySelector("#imageInput");
+});
+
+const handleImageUpload = () => imageInputRef.value?.click();
+
 const submitPost = async (e: Event) => {
+  err.value = "";
   e.preventDefault();
 
-  const { error } = await AxiosRequest("/post", "POST", {
-    author_id: "fa025492-9e1b-4d7e-8af6-5a7b2a16d359",
-    post_title: postTitle.value,
-    post_description: postDescription.value,
-  });
-
-  if (error) {
-    err.value = error;
-  } else {
-    err.value = "";
-    postTitle.value = "";
-    postDescription.value = "";
+  const image = imageInputRef?.value?.files;
+  if (image?.length !== 1) {
+    err.value = "Please upload an image";
+    return;
   }
+
+  // handle post
 };
 </script>

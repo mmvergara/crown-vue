@@ -6,6 +6,13 @@
       {{ post.post_title }}
     </h2>
     <p>{{ post.post_description }}</p>
+    <img
+      v-bind:src="post.post_image"
+      alt="post image"
+      class="max-w-[300px] w-full max-h-[200px] object-cover"
+      width="300"
+      height="200"
+    />
     <div class="w-[99%] border-b-[1px] mx-auto my-4"></div>
     <div class="flex justify-between items-center">
       <span class="opacity-50 text-xs">{{ time }}</span>
