@@ -6,3 +6,4 @@ export type PostType = {
   post_image: string;
   created_at: string;
 };
+
