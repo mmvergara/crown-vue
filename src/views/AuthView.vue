@@ -1,51 +1,51 @@
 <template>
   <main class="pt-[5vh]">
-    <h1 v-if="isSignup" class="text-lg font-semibold text-center pb-6">
+    <h1 v-if="isSignup" class="pb-6 text-center text-lg font-semibold">
       Sign up | Golang Gala
     </h1>
-    <h1 v-else class="text-lg font-semibold text-center pb-6">
+    <h1 v-else class="pb-6 text-center text-lg font-semibold">
       Sign in | Golang Gala
     </h1>
     <form
       v-on:submit="authSubmit"
-      class="flex flex-col justify-center items-center"
+      class="flex flex-col items-center justify-center"
     >
       <div
-        class="flex flex-col justify-center items-center gap-1 border-t-2 border-b-2 p-6 border-retroPurple rounded-sm w-full max-w-[500px]"
+        class="flex w-full max-w-[500px] flex-col items-center justify-center gap-1 rounded-sm border-b-2 border-t-2 border-retroPurple p-6"
       >
         <label for="authUsername" class="w-full">Username</label>
         <input
           v-model="username"
           type="text"
           id="authUsername"
-          class="bg-retroCream p-2 rounded-sm w-full"
+          class="w-full rounded-sm bg-retroCream p-2"
         />
         <label for="authPassword" class="w-full">Password</label>
         <input
           v-model="password"
           type="password"
           id="authPassword"
-          class="bg-retroCream p-2 rounded-sm w-full mb-4"
+          class="mb-4 w-full rounded-sm bg-retroCream p-2"
         />
 
         <button
           v-if="isSignup"
           type="submit"
-          class="bg-retroPurplePink p-4 rounded-sm text-white flex-auto w-full"
+          class="w-full flex-auto rounded-sm bg-retroPurplePink p-4 text-white"
         >
           Sign up
         </button>
         <button
           v-else
           type="submit"
-          class="bg-retroPurplePink p-4 rounded-sm text-white flex-auto w-full"
+          class="w-full flex-auto rounded-sm bg-retroPurplePink p-4 text-white"
         >
           Sign in
         </button>
         <button
           type="button"
           @click="handleGoogleAuth"
-          class="border-2 border-green-900 text-green-900 font-bold p-2 mt-4 rounded-sm flex-auto w-full hover:bg-green-700 hover:text-white"
+          class="mt-4 w-full flex-auto rounded-sm border-2 border-green-900 p-2 font-bold text-green-900 hover:bg-green-700 hover:text-white"
         >
           Sign in with Google
         </button>
@@ -54,14 +54,14 @@
     <button
       v-if="isSignup"
       @click="isSignup = !isSignup"
-      class="text-center w-full pt-4 underline underline-offset-4"
+      class="w-full pt-4 text-center underline underline-offset-4"
     >
       I already have an account
     </button>
     <button
       v-else
       @click="isSignup = !isSignup"
-      class="text-center w-full pt-4 underline underline-offset-4"
+      class="w-full pt-4 text-center underline underline-offset-4"
     >
       Create New Account
     </button>

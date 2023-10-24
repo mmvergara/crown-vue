@@ -35,8 +35,8 @@ const posts = ref<PostType[] | null>(dummyPosts);
 
 <template>
   <main>
-    <h1 class="text-center py-8 text-[50px]">Crown Vue</h1>
-    <section class="flex justify-center items-center flex-col gap-4">
+    <h1 class="py-8 text-center text-[50px]">Crown Vue</h1>
+    <section class="flex flex-col items-center justify-center gap-4">
       <PostItem v-for="post in posts" :post="post" :key="post.created_at" />
     </section>
   </main>

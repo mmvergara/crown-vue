@@ -1,30 +1,30 @@
 <template>
   <main class="pt-[5vh]">
-    <h1 class="text-lg font-semibold text-center pb-6">Create Post</h1>
+    <h1 class="pb-6 text-center text-lg font-semibold">Create Post</h1>
     <form
       v-on:submit="submitPost"
-      class="flex flex-col justify-center items-center"
+      class="flex flex-col items-center justify-center"
     >
       <div
-        class="flex flex-col justify-center items-center gap-1 border-t-2 border-b-2 p-6 border-retroPurple rounded-sm w-full max-w-[500px]"
+        class="flex w-full max-w-[500px] flex-col items-center justify-center gap-1 rounded-sm border-b-2 border-t-2 border-retroPurple p-6"
       >
         <label for="postTitle" class="w-full">Post Title</label>
         <input
           v-model="postTitle"
           type="text"
           id="postTitle"
-          class="bg-retroCream p-2 rounded-sm w-full mb-4"
+          class="mb-4 w-full rounded-sm bg-retroCream p-2"
         />
         <label for="postDescription" class="w-full">Post Description</label>
         <textarea
           v-model="postDescription"
           type="text"
           id="postDescription"
-          class="bg-retroCream p-4 rounded-sm w-full mb-6"
+          class="mb-6 w-full rounded-sm bg-retroCream p-4"
         ></textarea>
         <button
           type="button"
-          class="border-2 border-green-900 text-green-900 font-bold p-2 mt-4 rounded-sm flex-auto w-full hover:bg-green-700 hover:text-white"
+          class="mt-4 w-full flex-auto rounded-sm border-2 border-green-900 p-2 font-bold text-green-900 hover:bg-green-700 hover:text-white"
           @click="handleImageUpload"
         >
           Upload Image
@@ -39,7 +39,7 @@
 
         <button
           type="submit"
-          class="bg-retroPurplePink p-4 text-white flex-auto w-full rounded-md"
+          class="w-full flex-auto rounded-md bg-retroPurplePink p-4 text-white"
         >
           Create Post
         </button>

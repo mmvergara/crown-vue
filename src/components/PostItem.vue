@@ -1,23 +1,23 @@
 <template>
   <section
-    class="bg-white p-4 border-[purple] border-t-2 drop-shadow-md rounded-md w-full max-w-[500px]"
+    class="w-full max-w-[500px] rounded-md border-t-2 border-[purple] bg-white p-4 drop-shadow-md"
   >
-    <h2 class="font-semibold text-lg">
+    <h2 class="text-lg font-semibold">
       {{ post.post_title }}
     </h2>
     <p>{{ post.post_description }}</p>
     <img
       v-bind:src="post.post_image"
       alt="post image"
-      class="max-w-[300px] w-full max-h-[200px] object-cover"
+      class="max-h-[200px] w-full max-w-[300px] object-cover"
       width="300"
       height="200"
     />
-    <div class="w-[99%] border-b-[1px] mx-auto my-4"></div>
-    <div class="flex justify-between items-center">
-      <span class="opacity-50 text-xs">{{ time }}</span>
+    <div class="mx-auto my-4 w-[99%] border-b-[1px]"></div>
+    <div class="flex items-center justify-between">
+      <span class="text-xs opacity-50">{{ time }}</span>
       <button
-        class="bg-white border-2 hover:bg-slate-300 text-sm p-2 rounded-sm"
+        class="rounded-sm border-2 bg-white p-2 text-sm hover:bg-slate-300"
         @click="handleDelete"
       >
         ❌
