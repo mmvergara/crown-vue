@@ -3,7 +3,9 @@ import { RouterLink } from "vue-router";
 </script>
 
 <template>
-  <nav class="flex gap-2 bg-retroPurple p-2 text-white">
+  <nav
+    class="flex h-[8vh] items-center justify-center gap-2 bg-retroPurple text-white"
+  >
     <RouterLink to="/" class="nav-link mr-auto">Crown Vue</RouterLink>
     <RouterLink to="/create/post" class="nav-link">Create Post</RouterLink>
     <RouterLink to="/auth" class="nav-link">Sign In</RouterLink>
