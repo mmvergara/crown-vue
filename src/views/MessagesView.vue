@@ -10,7 +10,7 @@
         />
       </article>
       <article
-        class="flex cursor-pointer items-center gap-4 p-2 hover:bg-[hsl(34,45%,80%)]"
+        class="m-2 flex cursor-pointer items-center gap-4 rounded-lg p-2 hover:bg-[hsl(34,45%,80%)]"
       >
         <!-- image with placeholder -->
         <img
