@@ -6,3 +6,11 @@ export type PostType = {
   post_image: string;
   created_at: string;
 };
+
+export type MessageItemType = {
+  userImg: string;
+  content: string;
+  created_at: string;
+  isMessageOwner: boolean;
+  isFirstMessage: boolean;
+};

@@ -27,7 +27,22 @@
         </button>
       </div>
     </div>
-    <div class="grow-1 flex-1 border-b-2 border-b-[hsl(34,45%,70%)]"></div>
+    <div class="grow-1 flex-1 border-b-2 border-b-[hsl(34,45%,70%)] overflow-y-scroll">
+      <!-- Message Container -->
+      <article class="flex">
+        <img
+          src="https://picsum.photos/200/300"
+          alt="user image"
+          class="h-[32px] w-[32px] rounded-full"
+        />
+        <p>Username</p>
+      </article>
+      <MessageItem
+        v-for="message in dummyMessages"
+        :key="Math.random().toString()"
+        :message="message"
+      />
+    </div>
     <div class="flex p-2">
       <input
         type="text"
@@ -56,4 +71,163 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { MessageItemType } from "@/types/sample-types";
+import MessageItem from "./MessageItem.vue";
+
+const dummyMessages: MessageItemType[] = [
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe ",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: true,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content:
+      "Hello qweq weqwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qweqwe qwe qwe qw",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello qweqw eqw eqwe qwe qwe qwe qwe qwe qwe ",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: false,
+    isFirstMessage: true,
+  },
+
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: false,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: true,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: false,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe ",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: true,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content:
+      "Hello qweq weqwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qweqwe qwe qwe qw",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello qweqw eqw eqwe qwe qwe qwe qwe qwe qwe ",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: false,
+    isFirstMessage: true,
+  },
+
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: false,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: true,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: false,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe ",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: true,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content:
+      "Hello qweq weqwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qwe qweqwe qwe qwe qw",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello qweqw eqw eqwe qwe qwe qwe qwe qwe qwe ",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: false,
+    isFirstMessage: true,
+  },
+
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: false,
+    isFirstMessage: false,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: true,
+    isFirstMessage: true,
+  },
+  {
+    userImg: "https://picsum.photos/200/300",
+    content: "Hello",
+    created_at: "2021-10-10T12:00:00.000Z",
+    isMessageOwner: false,
+    isFirstMessage: false,
+  },
+];
+</script>

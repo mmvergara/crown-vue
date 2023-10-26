@@ -40,3 +40,4 @@ const handleDelete = () => {
 
 const time = timeElapsedSince(post.created_at);
 </script>
+../types/sample-types

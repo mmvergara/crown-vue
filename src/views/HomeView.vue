@@ -41,3 +41,4 @@ const posts = ref<PostType[] | null>(dummyPosts);
     </section>
   </main>
 </template>
+@/types/sample-types
