@@ -1,6 +1,8 @@
 <template>
   <section class="flex w-full flex-col">
-    <div class="flex items-center justify-between bg-[hsl(34,45%,70%)] p-2">
+    <div
+      class="drop-shadow-bottom-only flex items-center justify-between bg-[#eadbc8] p-2"
+    >
       <div class="flex items-center gap-2">
         <img
           src="https://picsum.photos/200/300"
@@ -11,7 +13,7 @@
       </div>
       <div class="block sm:hidden">
         <button
-          class="flex items-center justify-center rounded-md bg-[hsl(34,45%,60%)] p-2"
+          class="flex items-center justify-center rounded-md bg-[hsl(34,45%,50%)] p-2"
           data-cy="back-conversation-button"
         >
           <svg
@@ -27,21 +29,16 @@
         </button>
       </div>
     </div>
-    <div class="grow-1 flex-1 border-b-2 border-b-[hsl(34,45%,70%)] overflow-y-scroll">
+    <div
+      class="grow-1 conversation-container flex-1 overflow-y-scroll border-b-2 border-b-[hsl(34,45%,70%)]"
+    >
       <!-- Message Container -->
-      <article class="flex">
-        <img
-          src="https://picsum.photos/200/300"
-          alt="user image"
-          class="h-[32px] w-[32px] rounded-full"
-        />
-        <p>Username</p>
-      </article>
       <MessageItem
         v-for="message in dummyMessages"
         :key="Math.random().toString()"
         :message="message"
       />
+      <!-- Message Container -->
     </div>
     <div class="flex p-2">
       <input
@@ -231,3 +228,22 @@ const dummyMessages: MessageItemType[] = [
   },
 ];
 </script>
+
+<style scoped>
+.conversation-container::-webkit-scrollbar {
+  width: 6px;
+}
+.conversation-container::-webkit-scrollbar-thumb {
+  background-color: hsl(34, 45%, 55%);
+}
+
+.conversation-container::-webkit-scrollbar-track {
+  background-color: hsla(34, 45%, 80%, 0.555);
+}
+
+.drop-shadow-bottom-only {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+</style>
