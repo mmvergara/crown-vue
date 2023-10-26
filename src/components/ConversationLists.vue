@@ -1,10 +1,14 @@
 <template>
   <section class="hidden min-w-[300px] border-[hsl(34,45%,75%)] sm:block">
     <article
-      class="drop-shadow-bottom-only flex items-center justify-between bg-[#eadbc8]"
+      class="drop-shadow-bottom-only flex h-[48px] items-center justify-between border-r-[2px] border-[#d5b790] bg-[#eadbc8]"
     >
       <input
-        class="mx-auto w-full rounded-lg bg-[hsl(34,45%,80%)] p-2 placeholder-[hsl(0,0%,40%)] outline-none"
+        class="mx-auto w-[95%] rounded-sm bg-[hsl(34,45%,75%)] p-2 placeholder-[hsl(0,0%,40%)] outline-none"
+        type="text"
+        data-cy="search-conversations-input"
+        name="search-conversations-input"
+        id="search-conversations-input"
         placeholder="Search Conversations"
       />
     </article>
@@ -37,5 +41,10 @@
 
 .conversations-container::-webkit-scrollbar-track {
   background-color: #d5b790;
+}
+.drop-shadow-bottom-only {
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 </style>

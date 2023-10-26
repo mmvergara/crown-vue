@@ -27,9 +27,8 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from "vue";
 import { timeElapsedSince } from "@/utilities/helpers";
-import type { PostType } from "../types/post-types";
+import type { PostType } from "../types/sample-types";
 const { post } = defineProps<{
   post: PostType;
 }>();
