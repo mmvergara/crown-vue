@@ -7,6 +7,10 @@ import { RouterLink } from "vue-router";
     class="flex h-[8vh] items-center justify-center gap-2 bg-retroPurple text-white"
   >
     <RouterLink to="/" class="nav-link mr-auto">Crown Vue</RouterLink>
+
+    <!-- Temp -->
+    <RouterLink to="/settings" class="nav-link">Settings</RouterLink>
+    <!-- Temp -->
     <RouterLink to="/create/post" class="nav-link">Create Post</RouterLink>
     <RouterLink to="/auth" class="nav-link">Sign In</RouterLink>
     <RouterLink to="/messages" class="nav-link"
